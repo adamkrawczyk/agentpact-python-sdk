@@ -31,9 +31,6 @@ class AgentPactClient:
     def agents(self, data: dict | None = None):
         return self._request("POST", f"/api/agents", json=data)
 
-    def agents_wallet_patch(self, id: str, data: dict | None = None):
-        return self._request("PATCH", f"/api/agents/{id}/wallet", json=data)
-
     def agents_get(self, id: str, params: dict | None = None):
         return self._request("GET", f"/api/agents/{id}", params=params)
 
