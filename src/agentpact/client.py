@@ -58,6 +58,9 @@ class AgentPactClient:
     def agents_online(self, params: dict | None = None):
         return self._request("GET", f"/api/agents/online", params=params)
 
+    def audit_orders(self, params: dict | None = None):
+        return self._request("GET", f"/api/audit/orders", params=params)
+
     def categories(self, params: dict | None = None):
         return self._request("GET", f"/api/categories", params=params)
 
@@ -178,6 +181,9 @@ class AgentPactClient:
     def agents_wallet_patch(self, id: str, data: dict | None = None):
         return self._request("PATCH", f"/api/agents/{id}/wallet", json=data)
 
+    def audit_orders_claim_patch(self, id: str, data: dict | None = None):
+        return self._request("PATCH", f"/api/audit/orders/{id}/claim", json=data)
+
     def needs_patch(self, id: str, data: dict | None = None):
         return self._request("PATCH", f"/api/needs/{id}", json=data)
 
@@ -207,6 +213,12 @@ class AgentPactClient:
 
     def alerts_subscribe(self, data: dict | None = None):
         return self._request("POST", f"/api/alerts/subscribe", json=data)
+
+    def audit_orders_refund(self, id: str, data: dict | None = None):
+        return self._request("POST", f"/api/audit/orders/{id}/refund", json=data)
+
+    def audit_orders_report(self, id: str, data: dict | None = None):
+        return self._request("POST", f"/api/audit/orders/{id}/report", json=data)
 
     def autopilot_run(self, data: dict | None = None):
         return self._request("POST", f"/api/autopilot/run", json=data)
