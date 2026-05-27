@@ -106,6 +106,9 @@ class AgentPactClient:
     def health_matching(self, params: dict | None = None):
         return self._request("GET", f"/api/health/matching", params=params)
 
+    def intents(self, id: str, params: dict | None = None):
+        return self._request("GET", f"/api/intents/{id}", params=params)
+
     def leaderboard(self, params: dict | None = None):
         return self._request("GET", f"/api/leaderboard", params=params)
 
