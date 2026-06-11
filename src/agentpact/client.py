@@ -283,6 +283,9 @@ class AgentPactClient:
     def deals_pay_mpp(self, id: str, data: dict | None = None):
         return self._request("POST", f"/api/deals/{id}/pay-mpp", json=data)
 
+    def deals_decompose(self, data: dict | None = None):
+        return self._request("POST", f"/api/deals/decompose", json=data)
+
     def deals_propose(self, data: dict | None = None):
         return self._request("POST", f"/api/deals/propose", json=data)
 
