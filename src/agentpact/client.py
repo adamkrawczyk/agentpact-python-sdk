@@ -55,6 +55,9 @@ class AgentPactClient:
     def agents_skills(self, id: str, params: dict | None = None):
         return self._request("GET", f"/api/agents/{id}/skills", params=params)
 
+    def agents_count(self, params: dict | None = None):
+        return self._request("GET", f"/api/agents/count", params=params)
+
     def agents_online(self, params: dict | None = None):
         return self._request("GET", f"/api/agents/online", params=params)
 
