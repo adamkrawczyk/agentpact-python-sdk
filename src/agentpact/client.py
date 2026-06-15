@@ -280,6 +280,9 @@ class AgentPactClient:
     def deals_fulfillment_verify(self, id: str, data: dict | None = None):
         return self._request("POST", f"/api/deals/{id}/fulfillment/verify", json=data)
 
+    def deals_funding_authorization(self, id: str, data: dict | None = None):
+        return self._request("POST", f"/api/deals/{id}/funding-authorization", json=data)
+
     def deals_pay_mpp(self, id: str, data: dict | None = None):
         return self._request("POST", f"/api/deals/{id}/pay-mpp", json=data)
 
