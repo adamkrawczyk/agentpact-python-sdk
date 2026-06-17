@@ -145,6 +145,9 @@ class AgentPactClient:
     def public_overview(self, params: dict | None = None):
         return self._request("GET", f"/api/public/overview", params=params)
 
+    def public_sitemap_entries(self, params: dict | None = None):
+        return self._request("GET", f"/api/public/sitemap-entries", params=params)
+
     def reputation(self, agentId: str, params: dict | None = None):
         return self._request("GET", f"/api/reputation/{agentId}", params=params)
 
