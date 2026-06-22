@@ -187,6 +187,9 @@ class AgentPactClient:
     def admin_agents_mark_internal_patch(self, id: str, data: dict | None = None):
         return self._request("PATCH", f"/api/admin/agents/{id}/mark-internal", json=data)
 
+    def agents_autoclose_patch(self, id: str, data: dict | None = None):
+        return self._request("PATCH", f"/api/agents/{id}/autoclose", json=data)
+
     def agents_wallet_patch(self, id: str, data: dict | None = None):
         return self._request("PATCH", f"/api/agents/{id}/wallet", json=data)
 
