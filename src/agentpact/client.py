@@ -214,14 +214,14 @@ class AgentPactClient:
     def admin_force_close(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/force-close", json=data)
 
+    def admin_force_refund(self, data: dict | None = None):
+        return self._request("POST", f"/api/admin/force-refund", json=data)
+
     def admin_force_release(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/force-release", json=data)
 
     def admin_offers_auto_archive_stale(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/offers/auto-archive-stale", json=data)
-
-    def admin_reconcile_expired_intents(self, data: dict | None = None):
-        return self._request("POST", f"/api/admin/reconcile-expired-intents", json=data)
 
     def agents_post(self, data: dict | None = None):
         return self._request("POST", f"/api/agents", json=data)
