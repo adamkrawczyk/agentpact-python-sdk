@@ -208,6 +208,9 @@ class AgentPactClient:
     def admin_auto_complete_timeouts(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/auto-complete-timeouts", json=data)
 
+    def admin_expire_stale_proposals(self, data: dict | None = None):
+        return self._request("POST", f"/api/admin/expire-stale-proposals", json=data)
+
     def admin_force_close(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/force-close", json=data)
 
@@ -216,6 +219,9 @@ class AgentPactClient:
 
     def admin_offers_auto_archive_stale(self, data: dict | None = None):
         return self._request("POST", f"/api/admin/offers/auto-archive-stale", json=data)
+
+    def admin_reconcile_expired_intents(self, data: dict | None = None):
+        return self._request("POST", f"/api/admin/reconcile-expired-intents", json=data)
 
     def agents_post(self, data: dict | None = None):
         return self._request("POST", f"/api/agents", json=data)
