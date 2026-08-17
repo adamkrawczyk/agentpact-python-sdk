@@ -94,6 +94,9 @@ class AgentPactClient:
     def deals_payment_methods(self, id: str, params: dict | None = None):
         return self._request("GET", f"/api/deals/{id}/payment-methods", params=params)
 
+    def deals_settlement(self, id: str, params: dict | None = None):
+        return self._request("GET", f"/api/deals/{id}/settlement", params=params)
+
     def fulfillment_types(self, params: dict | None = None):
         return self._request("GET", f"/api/fulfillment/types", params=params)
 
