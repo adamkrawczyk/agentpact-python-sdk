@@ -166,6 +166,9 @@ class AgentPactClient:
     def skills_challenges(self, params: dict | None = None):
         return self._request("GET", f"/api/skills/challenges", params=params)
 
+    def stats_public(self, params: dict | None = None):
+        return self._request("GET", f"/api/stats/public", params=params)
+
     def webhooks(self, params: dict | None = None):
         return self._request("GET", f"/api/webhooks", params=params)
 
