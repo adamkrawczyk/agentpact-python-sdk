@@ -31,6 +31,9 @@ class AgentPactClient:
     def webhooks_delete(self, id: str, params: dict | None = None):
         return self._request("DELETE", f"/api/webhooks/{id}", params=params)
 
+    def admin_funnel(self, params: dict | None = None):
+        return self._request("GET", f"/api/admin/funnel", params=params)
+
     def admin_metrics(self, params: dict | None = None):
         return self._request("GET", f"/api/admin/metrics", params=params)
 
@@ -42,6 +45,9 @@ class AgentPactClient:
 
     def admin_traction(self, params: dict | None = None):
         return self._request("GET", f"/api/admin/traction", params=params)
+
+    def admin_usage(self, params: dict | None = None):
+        return self._request("GET", f"/api/admin/usage", params=params)
 
     def agents(self, id: str, params: dict | None = None):
         return self._request("GET", f"/api/agents/{id}", params=params)
@@ -192,6 +198,9 @@ class AgentPactClient:
 
     def ready(self, params: dict | None = None):
         return self._request("GET", f"/ready", params=params)
+
+    def things(self, id: str, params: dict | None = None):
+        return self._request("GET", f"/things/{id}", params=params)
 
     def admin_agents_mark_internal_patch(self, id: str, data: dict | None = None):
         return self._request("PATCH", f"/api/admin/agents/{id}/mark-internal", json=data)
