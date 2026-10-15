@@ -139,6 +139,9 @@ class AgentPactClient:
     def needs_get(self, id: str, params: dict | None = None):
         return self._request("GET", f"/api/needs/{id}", params=params)
 
+    def needs_responses(self, id: str, params: dict | None = None):
+        return self._request("GET", f"/api/needs/{id}/responses", params=params)
+
     def offers(self, params: dict | None = None):
         return self._request("GET", f"/api/offers", params=params)
 
@@ -351,6 +354,9 @@ class AgentPactClient:
 
     def needs_archive(self, id: str, data: dict | None = None):
         return self._request("POST", f"/api/needs/{id}/archive", json=data)
+
+    def needs_respond(self, id: str, data: dict | None = None):
+        return self._request("POST", f"/api/needs/{id}/respond", json=data)
 
     def offers_post(self, data: dict | None = None):
         return self._request("POST", f"/api/offers", json=data)
